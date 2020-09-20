@@ -1,0 +1,22 @@
+This is a copy of my klipper config mostly for reference, I don't recomend using this config without making changes to work for your printer. 
+
+# My Printer:
+3ku Delta 2016
+Heated bed
+Arduino ATMEGA2560 + RAMP 1.4
+Stepper driver: A4988
+OPTICAL ENDSTOP
+Nozzle 0.8mm
+Filament diameter 1.75
+Glass bed
+No autocalibration only manual calibration
+
+
+
+- The endstop_pin are inverted to work with my Optical Endstops 
+- adjusted position_endstop by doing paper test, to compensate for diferent height of the axis on my printer
+- auto bed level function is not tested so might need some adjustment 
+- Added START and END gcode in config file so the only GCODE that is needed in the slicer is for the Start G-Code: "START_PRINT" and for the End G-Code: "END_PRINT"
+- heater_pin for the Heated Bed is corrected to work with my printer modell
+- for the "serial:" you have to find out what the correct value is for your printer when it's plugged in.
+
