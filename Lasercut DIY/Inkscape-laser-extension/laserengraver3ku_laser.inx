@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>3KU-LaserCut</_name>
+    <id>ru.cnc-club.filter.gcodetools_laser</id>
+	<dependency type="executable" location="extensions">laserengraver3ku.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+	<param name='active-tab' type="notebook">
+
+		<page name='Laser' _gui-text='Laser Setting'>
+			<param name="engraving-laser-speed" type="int" min="0" max="4000" _gui-text="Speed">100</param>
+			<param name="biarc-max-split-depth" type="int" min="0" max="20" _gui-text="Devid:">2</param>
+			<param name="filename" type="string" _gui-text="File:">3kulaser.nc</param>
+			<param name="disable-Arc" type="boolean" _gui-text="Disable ARC Move">false</param>
+			<param name="add-numeric-suffix-to-filename" type="boolean" _gui-text="Auto File Number">true</param>
+		</page>
+
+		<page name='preferences' _gui-text='Others'>
+			<param name="directory" type="string" _gui-text="Directory:">c:\output\</param>
+
+			<param name="unit" type="enum" _gui-text="Units (mm or in):">
+				<item value="G21 (All units in mm)">mm</item>
+				<item value="G20 (All units in inches)">in</item>
+			</param>
+
+			<param name="suppress-all-messages" type="boolean" _gui-text="Suppress all messages">true</param>
+			<param name="engraving-draw-calculation-paths" type="boolean" _gui-text="Draw additional graphics to debug engraving path">false</param>
+
+			<param name="create-log" type="boolean" _gui-text="Generate log file">false</param>			
+			<param name="log-filename" type="string" _gui-text="Full path to log file:"></param>			
+		</page>
+	</param>	
+
+	<effect>
+		<effects-menu>
+			<submenu _name="3KU-Laser"/>
+		</effects-menu>
+		<object-type>path</object-type>
+  </effect>
+
+	<script>
+		<command reldir="extensions" interpreter="python">laserengraver3ku.py</command>
+	</script>
+
+</inkscape-extension>
