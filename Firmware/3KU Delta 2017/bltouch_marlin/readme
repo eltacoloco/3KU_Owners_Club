@@ -1,0 +1,13 @@
+marlin modded for autolevel with BL-Touch for Delta 3KU 2017 
+Board: MKS_Gen_L v1.0
+Print volume diameter: 198 mm
+build plate thicknes: 6 mm
+bed: glass bed
+endstop: mechanical endstops
+probe: BL-Touch 3.0 
+driver: A4988
+level: Auto Bed Level
+
+
+
+O.B.S Don't forget to change "#define DELTA_HEIGHT 294.00" in Configuration.h to reflect your max z-height.
